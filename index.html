@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ontology Foundry</title>
+    <title>Game and Sports Ontology Foundry</title>
     <style>
         body {
             margin: 0;
@@ -19,72 +19,33 @@
         }
         .navbar {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        .navbar li {
+            padding: 10px;
         }
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 10px;
         }
-        .menu-icon {
-            display: none;
-        }
-        @media (max-width: 600px) {
-            .navbar {
-                display: none;
-            }
-            .menu-icon {
-                display: block;
-                cursor: pointer;
-            }
-            .mobile-menu {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #000;
-            }
-            .mobile-menu a {
-                display: block;
-                text-align: center;
-                padding: 10px;
-                border-bottom: 1px solid white;
-            }
-        }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <span class="menu-icon" onclick="toggleMenu()">☰</span>
-    <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#ontologies">Ontologies</a>
-        <a href="#principles">Principles</a>
-        <a href="#membership">Membership</a>
-        <a href="#training">Training</a>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#ontologies">Ontologies</a>
-        <a href="#principles">Principles</a>
-        <a href="#membership">Membership</a>
-        <a href="#training">Training</a>
-    </div>
+    <h1>Game and Sports Ontology Foundry</h1>
+    <ul class="navbar">
+        <li><a href="index.html">About</a></li>
+        <li><a href="ontologies.html">Ontologies</a></li>
+        <li><a href="principles.html">Principles</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="training.html">Training</a></li>
+    </ul>
 </div>
-
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById("mobileMenu");
-        if (menu.style.display === "block") {
-            menu.style.display = "none";
-        } else {
-            menu.style.display = "block";
-        }
-    }
-</script>
 
 </body>
 </html>
+
