@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             background-color: #F0EFEF;
             color: black;
+            padding-top: 60px; /* Adjusted to ensure content is visible below fixed navbar */
         }
         .header {
             background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
@@ -18,16 +19,21 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            height: 150px; /* Adjust based on your preference */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 100px; /* Adjusted size */
+            transition: height 0.5s ease; /* Smooth transition for resizing */
         }
         .navbar {
+            position: fixed; /* Make navbar fixed at the top */
+            top: 0;
+            width: 100%;
+            background-color: #333; /* Ensure navbar is visible against any background */
+            z-index: 1000; /* Ensure navbar is above other content */
             display: flex;
             justify-content: center;
             list-style-type: none;
+            margin: 0;
             padding: 0;
+            transition: top 0.3s; /* Smooth transition for hiding/showing */
         }
         .navbar li {
             padding: 10px;
@@ -37,20 +43,41 @@
             text-decoration: none;
             padding: 10px;
         }
+        .content {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
 
-<div class="header">
+<div class="header" id="header">
     <h1>Game and Sports Ontology Foundry</h1>
 </div>
-<ul class="navbar">
+<ul class="navbar" id="navbar">
     <li><a href="about.html">About</a></li>
     <li><a href="ontologies.html">Ontologies</a></li>
     <li><a href="principles.html">Principles</a></li>
     <li><a href="membership.html">Membership</a></li>
     <li><a href="training.html">Training</a></li>
 </ul>
+<div class="content">
+    <!-- Your content here -->
+</div>
+
+<script>
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    var header = document.getElementById("header");
+    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+        header.style.height = "0px"; // Reduce header size when scrolling down
+        header.style.padding = "0px"; // Remove padding to collapse the space
+    } else {
+        header.style.height = "100px"; // Original size
+        header.style.padding = "20px"; // Original padding
+    }
+}
+</script>
 
 </body>
 </html>
+
