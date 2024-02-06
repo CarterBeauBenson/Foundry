@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             background-color: #F0EFEF;
             color: black;
-            padding-top: 60px; /* Adjusted to ensure content is visible below fixed navbar */
+            /* Remove padding-top from body to allow header image to be at the top initially */
         }
         .header {
             background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
@@ -23,14 +23,12 @@
             transition: height 0.5s ease; /* Smooth transition for resizing */
         }
         .header h1 {
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black border effect */
+            font-size: 36px; /* Increased font size */
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Slightly larger shadow */
         }
         .navbar {
-            position: fixed; /* Make navbar fixed at the top */
-            top: 0;
-            width: 100%;
-            background-color: #333; /* Ensure navbar is visible against any background */
-            z-index: 1000; /* Ensure navbar is above other content */
+            /* Initially, do not make the navbar fixed */
+            background-color: #333;
             display: flex;
             justify-content: center;
             list-style-type: none;
@@ -42,10 +40,9 @@
             padding: 10px;
         }
         .navbar a {
-            color: black; /* Change navbar words to black */
+            color: white;
             text-decoration: none;
             padding: 10px;
-            background-color: #FFFFFF; /* Added background color to make text more readable */
         }
         .content {
             padding: 20px;
@@ -69,17 +66,28 @@
 </div>
 
 <script>
-window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-    var header = document.getElementById("header");
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        header.style.height = "0px"; // Reduce header size when scrolling down
-        header.style.padding = "0px"; // Remove padding to collapse the space
+    var navbar = document.getElementById("navbar");
+    var header = document.getElementById("header").offsetHeight;
+    if (window.pageYOffset > header) {
+        navbar.classList.add("sticky");
     } else {
-        header.style.height = "100px"; // Original size
-        header.style.padding = "20px"; // Original padding
+        navbar.classList.remove("sticky");
     }
 }
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+window.onscroll = function() {scrollFunction()};
+
+// Add sticky class CSS in <style>
+document.head.innerHTML += `<style>
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+</style>`;
 </script>
 
 </body>
