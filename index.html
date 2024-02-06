@@ -13,19 +13,23 @@
             /* Remove padding-top from body to allow header image to be at the top initially */
         }
        .header {
-            background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            height: 50px; /* Adjusted size */
-            transition: height 0.5s ease; /* Smooth transition for resizing */
-        } 
-        .header h1 {
-            font-size: 40px; /* Increased font size */
-            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Slightly larger shadow */
-        } 
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will vertically center the content */
+    background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 0; /* Adjusted padding */
+    height: 100px; /* Adjusted height to better fit the font size */
+    transition: height 0.5s ease;
+    text-align: center; /* This centers the text horizontally */
+}
+.header h1 {
+    font-size: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0; /* Ensure there's no default margin pushing content off-center */
+}
 .navbar {
     /* Initially, do not make the navbar fixed */
     background-color: #333;
