@@ -10,48 +10,62 @@
             font-family: Garamond, serif; /* Updated font family to Garamond */
             background-color: #F0EFEF;
             color: black;
-            /* Remove padding-top from body to allow header image to be at the top initially */
         }
-       .header {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* This will vertically center the content */
-    background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 0; /* Adjusted padding */
-    height: 100px; /* Adjusted height to better fit the font size */
-    transition: height 0.5s ease;
-    text-align: center; /* This centers the text horizontally */
-}
-.header h1 {
-    font-size: 40px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin: 0; /* Ensure there's no default margin pushing content off-center */
-}
-.navbar {
-    /* Initially, do not make the navbar fixed */
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    transition: top 0.3s; /* Smooth transition for hiding/showing */
-}
-.navbar li {
-    padding: 10px;
-}
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 18px; /* Increased font size */
-}
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* This will vertically center the content */
+            background-image: url('https://github.com/CarterBeauBenson/Foundry/blob/main/image/header%202.jpg?raw=true');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 0; /* Adjusted padding */
+            height: 100px; /* Adjusted height to better fit the font size */
+            transition: height 0.5s ease;
+            text-align: center; /* This centers the text horizontally */
+        }
+        .header h1 {
+            font-size: 40px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            margin: 0; /* Ensure there's no default margin pushing content off-center */
+        }
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            transition: top 0.3s; /* Smooth transition for hiding/showing */
+        }
+        .navbar li {
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px; /* Increased font size */
+        }
         .content {
             padding: 20px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Ensures consistent column sizing */
+        }
+        table, th, td {
+            border: none; /* Hides table lines */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Light grey background for section headers */
+        }
+        /* Optional: Additional styles for better table aesthetics */
     </style>
 </head>
 <body>
@@ -67,7 +81,34 @@
     <li><a href="training.html">Training</a></li>
 </ul>
 <div class="content">
-    <!-- Your content here -->
+    <table>
+        <tr><th colspan="3">Top Level Ontology</th></tr>
+        <tr>
+            <td><a href="https://github.com/BFO-ontology/BFO">BFO</a></td>
+            <td>Basic Formal Ontology</td>
+            <td>A framework for formalizing ontological distinctions in biomedical research and beyond.</td>
+        </tr>
+        <tr><th colspan="3">Midlevel Ontology</th></tr>
+        <tr>
+            <td><a href="https://github.com/CommonCoreOntology/CommonCoreOntologies">CCO</a></td>
+            <td>Common Core Ontologies</td>
+            <td>A suite of ontologies designed for facilitating interoperability across domain ontologies.</td>
+        </tr>
+        <tr><th colspan="3">Imported OBO Ontologies</th></tr>
+        <!-- Example row for an imported OBO ontology -->
+        <tr>
+            <td>OBO</td>
+            <td>Ontology for Biomedical Investigations</td>
+            <td>Provides terms for shared use across different biological and medical domains.</td>
+        </tr>
+        <tr><th colspan="3">Core Reference Ontology</th></tr>
+        <!-- Details for the core reference ontology -->
+        <tr>
+            <td>CoreRef</td>
+            <td>Core Reference Ontology</td>
+            <td>Extends CCO and reuses OBO terms to provide a foundational ontology for specific domains.</td>
+        </tr>
+    </table>
 </div>
 
 <script>
