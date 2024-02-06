@@ -22,6 +22,9 @@
             height: 100px; /* Adjusted size */
             transition: height 0.5s ease; /* Smooth transition for resizing */
         }
+        .header h1 {
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black border effect */
+        }
         .navbar {
             position: fixed; /* Make navbar fixed at the top */
             top: 0;
@@ -39,9 +42,10 @@
             padding: 10px;
         }
         .navbar a {
-            color: white;
+            color: black; /* Change navbar words to black */
             text-decoration: none;
             padding: 10px;
+            background-color: #FFFFFF; /* Added background color to make text more readable */
         }
         .content {
             padding: 20px;
@@ -80,4 +84,3 @@ function scrollFunction() {
 
 </body>
 </html>
-
